@@ -48,14 +48,3 @@ function bidAuction(){
 
 }
 
-
-// function queryAllAuctions() {
-//   var query = connection.query("SELECT * FROM auctions", function(err, res) {
-//     if (err) throw err;
-//     console.log(res);
-//     console.log(query.sql);
-
-//   });
-// }
-
-
