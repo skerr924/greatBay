@@ -24,33 +24,38 @@ connection.connect(function(err) {
 function startingPrompt(){ 
     inquirer
       .prompt({
-        name: "postOrBid",
+        name: "action",
         type: "list",
-        message: "Would you like to [POST] an auction or [BID] on an auction?",
-        choices: ["POST", "BID", "EXIT"]
+        message: "Would you like to post an item or bid on an existing auction?",
+        choices: ["Post", "Bid"]
       })
       .then(function(answer) {
-        // based on their answer, either call the bid or the post functions
-        if (answer.postOrBid === "POST") {
-          postAuction();
+        if (answer.postOrBid === "Post") {
+          postItem();
         }
-        else if(answer.postOrBid === "BID") {
+        else if(answer.postOrBid === "Bid") {
           bidAuction();
-        } else{
-          connection.end();
         }
       });
 
 }
 
+function postItem(){ 
 
-function queryAllAuctions() {
-  var query = connection.query("SELECT * FROM auctions", function(err, res) {
-    if (err) throw err;
-    console.log(res);
-    console.log(query.sql);
-
-  });
 }
+
+function bidAuction(){ 
+
+}
+
+
+// function queryAllAuctions() {
+//   var query = connection.query("SELECT * FROM auctions", function(err, res) {
+//     if (err) throw err;
+//     console.log(res);
+//     console.log(query.sql);
+
+//   });
+// }
 
 
