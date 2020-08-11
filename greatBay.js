@@ -48,15 +48,29 @@ function postItem(){
       name: "item", 
       type: "input", 
       message: "What type of item do you want to sell?"
+    }, 
+    { 
+      name: "category", 
+      type: "list", 
+      message: "What type of item is this?",
+      choices: ["Electronics", "Clothing/Shoes", "Furniture", "Decorations", "Kitchen/Dining", "Lawn and Garden"]
+    },
+    { 
+      name: "price", 
+      type: "input", 
+      message: "What is the starting bid?"
+    }, 
+    { 
+      name: "description", 
+      type: "input", 
+      message: "Describe your item in a sentence or two."
     }
-
-
-
-
   ]
+    .then(function(answer){ 
 
 
-
+        
+    }
 
   )
 
