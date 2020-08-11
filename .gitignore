@@ -103,5 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-#pw file
-./pw.js 
+#password file
+pw.js 

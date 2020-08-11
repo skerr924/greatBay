@@ -43,6 +43,23 @@ function startingPrompt(){
 
 function postItem(){ 
 
+  inquirer.prompt ([
+    {
+      name: "item", 
+      type: "input", 
+      message: "What type of item do you want to sell?"
+    }
+
+
+
+
+  ]
+
+
+
+
+  )
+
   // inquirer
   //   .prompt([
   //     {
