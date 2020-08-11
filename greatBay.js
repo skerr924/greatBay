@@ -65,61 +65,68 @@ function postItem(){
       type: "input", 
       message: "Describe your item in a sentence or two."
     }
-  ]
+  ])
     .then(function(answer){ 
-
-
-        
-    }
-
-  )
-
-  // inquirer
-  //   .prompt([
-  //     {
-  //       name: "item",
-  //       type: "input",
-  //       message: "What is the item you would like to submit?"
-  //     },
-  //     {
-  //       name: "category",
-  //       type: "input",
-  //       message: "What category would you like to place your auction in?"
-  //     },
-  //     {
-  //       name: "startingBid",
-  //       type: "input",
-  //       message: "What would you like your starting bid to be?",
-  //       validate: function(value) {
-  //         if (isNaN(value) === false) {
-  //           return true;
-  //         }
-  //         return false;
-  //       }
-  //     }
-  //   ])
-  //   .then(function(answer) {
-  //     // when finished prompting, insert a new item into the db with that info
-  //     connection.query(
-  //       "INSERT INTO auctions SET ?",
-  //       {
-  //         item_name: answer.item,
-  //         category: answer.category,
-  //         starting_bid: answer.startingBid || 0,
-  //         highest_bid: answer.startingBid || 0
-  //       },
-  //       function(err) {
-  //         if (err) throw err;
-  //         console.log("Your auction was created successfully!");
-  //         // re-prompt the user for if they want to bid or post
-  //         start();
-  //       }
-  //     );
-  //   });
-
+        var query = connection.query ("INSERT INTO auctions SET ?",
+        {
+          itemName: answer.item,
+          category: answer.category,
+          description: answer.description, 
+          price: answer.price,
+          highestBid: 0
+        },
+        function(err) {
+          if (err) throw err;
+          console.log(query.sql); 
+          console.log("Your item was added");
+        }
+        );
+      });
 }
 
 function bidAuction(){ 
 
-}
+  // inquirer.prompt ([
+  //   {
+  //     name: "item", 
+  //     type: "input", 
+  //     message: "What type of item do you want to sell?"
+  //   }, 
+  //   { 
+  //     name: "category", 
+  //     type: "list", 
+  //     message: "What type of item is this?",
+  //     choices: ["Electronics", "Clothing/Shoes", "Furniture", "Decorations", "Kitchen/Dining", "Lawn and Garden"]
+  //   },
+  //   { 
+  //     name: "price", 
+  //     type: "input", 
+  //     message: "What is the starting bid?"
+  //   }, 
+  //   { 
+  //     name: "description", 
+  //     type: "input", 
+  //     message: "Describe your item in a sentence or two."
+  //   }
+  // ])
+  //   .then(function(answer){ 
+  //       var query = connection.query ("INSERT INTO auctions SET ?",
+  //       {
+  //         itemName: answer.item,
+  //         category: answer.category,
+  //         description: answer.description, 
+  //         price: answer.price,
+  //         highestBid: 0
+  //       },
+  //       function(err) {
+  //         if (err) throw err;
+  //         console.log(query.sql); 
+  //         console.log("Your item was added");
+  //       }
+  //     );
+  //   });
+  }
 
+
+
+  
