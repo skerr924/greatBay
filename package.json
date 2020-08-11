@@ -1,0 +1,23 @@
+{
+  "name": "greatbay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "greatBay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skerr924/greatBay.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skerr924/greatBay/issues"
+  },
+  "homepage": "https://github.com/skerr924/greatBay#readme",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "inquirer": "^6.2.1"
+  }
+}
